@@ -29,9 +29,9 @@
 <div ng-controller="List">
   <ul>
     <li ng-repeat="person in people | filter:search">
-      Name: {{ person.name }}
+      {{ person.name }} :
       <small>
-        (Age: {{ person.age }})
+        {{ person.age }}
       </small>
     </li>
   </ul>
