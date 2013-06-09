@@ -20,5 +20,20 @@
 </head>
 <body>
 
+  <div>
+    <input type="checkbox"
+           ng-model="checkedShow">
+    <label>Show?</label>
+  </div>
+  <div ng-show="checkedShow"> <!-- Angular checks if it's Truthy -->
+    Show Hello, World
+  </div>
 </body>
+<script type="text/javascript">
+
+</script>
 </html>
+
+  <!--
+  Directives are a way to teach html new tricks
+   -->
