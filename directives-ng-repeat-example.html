@@ -28,8 +28,11 @@
 
 <div ng-controller="List">
   <ul>
-    <li ng-repeat="name in names | filter:search">
-      {{ name }}
+    <li ng-repeat="person in people | filter:search">
+      Name: {{ person.name }}
+      <small>
+        (Age: {{ person.age }})
+      </small>
     </li>
   </ul>
 </div>
@@ -37,7 +40,13 @@
 </body>
 <script type="text/javascript">
   var List = function($scope) {
-    $scope.names = ['Tom', 'Jeffrey', 'Dan', 'David', 'Patrick'];
+    $scope.people = [
+      { name:'Tom', age:20 },
+      { name:'Jeffrey', age:30 },
+      { name:'Dan', age:40 },
+      { name:'David', age:50 },
+      { name:'Patrick', age:23 }
+    ];
   };
 </script>
 </html>
