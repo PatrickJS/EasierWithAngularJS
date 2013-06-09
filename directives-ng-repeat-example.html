@@ -21,12 +21,18 @@
 <body>
 
 <div ng-controller="List">
-
+  <ul>
+    <li>Tom</li>
+    <li>Jeffrey</li>
+    <li>Dan</li>
+    <li>David</li>
+  </ul>
 </div>
 
 </body>
 <script type="text/javascript">
   var List = function($scope) {
+    $scope.names = ['Tom', 'Jeffrey', 'Dan', 'David'];
   };
 </script>
 </html>
