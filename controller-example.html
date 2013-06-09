@@ -38,7 +38,11 @@
     $scope.age = '23';
   }
   var AnotherCtrl = function($scope) {
-
+    $scope.name = 'PatrickJS'
+    $scope.age = '23'
+    $scope.$watch('name', function() {
+      console.log($scope.name)
+    }); // Have Angular watch the 'name' model for change and react
   }
 </script>
 </html>
