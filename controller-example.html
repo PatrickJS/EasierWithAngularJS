@@ -17,6 +17,16 @@
       {{ name }}
     </h1>
     <h2>
+      {{ age * 2 / 2}}
+    </h2>
+  </div>
+
+  <div ng-controller="AnotherCtrl">
+    <input ng-model="name">
+    <h1>
+      {{ name }}
+    </h1>
+    <h2>
       {{ age }}
     </h2>
   </div>
@@ -26,6 +36,9 @@
   var Ctrl = function($scope) {
     $scope.name = 'Patrick';
     $scope.age = '23';
+  }
+  var AnotherCtrl = function($scope) {
+
   }
 </script>
 </html>
