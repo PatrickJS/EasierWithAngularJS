@@ -24,7 +24,7 @@
     <label>Name:</label>
     <input type="text"
            ng-model="name"
-           autofocus >
+           autofocus>
   </div>
   <div>
     <input type="checkbox"
@@ -36,10 +36,11 @@
   </div>
 
   <div ng-show="checkedShow"> <!-- Angular checks if it's Truthy -->
-    Show Hello, {{ name }}
+    Show Hello, {{ name || 'world' }}!
   </div>
   <div ng-hide="checkedHide"> <!-- the reverse checks if it's Falsy -->
-    Hide Hello, {{ name }}
+    Hide Hello, {{ name || 'world' }}!
+    <!-- templates are just Javascript you can use or operator for defaults-->
   </div>
 
 </body>
