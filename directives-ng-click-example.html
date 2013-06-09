@@ -16,6 +16,9 @@
       color: #222;
       margin: 5em;
     }
+    .first-true {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -30,7 +33,7 @@
   <ul>
     <li ng-repeat="person in people | filter:search">
       {{ person.name }} : {{ person.age }}
-      <button ng-click="remove($index)">x</button>
+      <button ng-click="remove($index)" class="first-{{ $first }}">x</button>
       <!-- ng-repeat gives you $index to work on the current model -->
       <small>
         <span ng-show="$first">
@@ -45,6 +48,9 @@
       </small>
     </li>
   </ul>
+
+  <span>There are {{ people.length }} people in the list.</span>
+
   <div>
     <label>Name:</label>
     <input ng-model="new_name">
