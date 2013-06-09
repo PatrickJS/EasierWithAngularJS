@@ -12,14 +12,19 @@
 
   <div>
 
+    <label>Message:</label>
+    <input type="text"
+           ng-model="yourMessage"
+           placeholder="Enter your message here"
+           value="Hello"
+           autofocus>
     <label>Name:</label>
     <input type="text"
            ng-model="yourName"
-           placeholder="Enter a name here"
-           autofocus>
+           placeholder="Enter a name here">
     <hr>
     <h1>
-      Hello {{ yourName }}
+      {{ yourMessage }} {{ yourName }}
     </h1>
 
   </div>
