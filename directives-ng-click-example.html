@@ -30,6 +30,8 @@
   <ul>
     <li ng-repeat="person in people | filter:search">
       {{ person.name }} : {{ person.age }}
+      <button ng-click="remove($index)">x</button>
+      <!-- ng-repeat gives you $index to work on the current model -->
     </li>
   </ul>
   <div>
@@ -60,8 +62,13 @@
           name: $scope.new_name,
           age: $scope.new_age
         });
+        $scope.new_age = '';
+        $scope.new_name = '';
       }
     };
+    $scope.remove = function(index) {
+      $scope.people.splice(index, 1);
+    }
   };
 </script>
 </html>
