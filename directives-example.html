@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angular Directives</title>
+  <title>Angular with Directives</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
   <style>
     * {
@@ -24,9 +24,17 @@
     <input type="checkbox"
            ng-model="checkedShow">
     <label>Show?</label>
+    <input type="checkbox"
+           ng-model="checkedHide">
+     <label>Hide?</label>
   </div>
+
   <div ng-show="checkedShow"> <!-- Angular checks if it's Truthy -->
     Show Hello, World
+  </div>
+
+  <div ng-hide="checkedHide"> <!-- the reverse checks if it's Falsy -->
+    Hide Hello, World
   </div>
 </body>
 <script type="text/javascript">
