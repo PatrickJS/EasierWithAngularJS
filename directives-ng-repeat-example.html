@@ -20,9 +20,15 @@
 </head>
 <body>
 
+<div>
+  <input type="search"
+         ng-model="search"
+         autofocus>
+</div>
+
 <div ng-controller="List">
   <ul>
-    <li ng-repeat="name in names">
+    <li ng-repeat="name in names | filter:search">
       {{ name }}
     </li>
   </ul>
