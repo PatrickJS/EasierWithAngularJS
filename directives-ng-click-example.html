@@ -32,6 +32,17 @@
       {{ person.name }} : {{ person.age }}
       <button ng-click="remove($index)">x</button>
       <!-- ng-repeat gives you $index to work on the current model -->
+      <small>
+        <span ng-show="$first">
+          First!
+        </span>
+        <span ng-show="$middle">
+          Middle!
+        </span>
+        <span ng-show="$last">
+          Last!
+        </span>
+      </small>
     </li>
   </ul>
   <div>
