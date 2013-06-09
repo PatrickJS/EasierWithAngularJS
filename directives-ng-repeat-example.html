@@ -22,17 +22,16 @@
 
 <div ng-controller="List">
   <ul>
-    <li>Tom</li>
-    <li>Jeffrey</li>
-    <li>Dan</li>
-    <li>David</li>
+    <li ng-repeat="name in names">
+      {{ name }}
+    </li>
   </ul>
 </div>
 
 </body>
 <script type="text/javascript">
   var List = function($scope) {
-    $scope.names = ['Tom', 'Jeffrey', 'Dan', 'David'];
+    $scope.names = ['Tom', 'Jeffrey', 'Dan', 'David', 'Patrick'];
   };
 </script>
 </html>
