@@ -24,12 +24,30 @@
 <body>
 
 <div ng-controller="ContactsCtrl">
-
+  <h1>{{ selected_person.name }}</h1>
+  <select ng-model="selected_person"
+          ng-options="person.name for person in people">
+    <option value="">Choose a person</option>
+  </select>
 </div>
 
 </body>
 <script type="text/javascript">
   var ContactsCtrl = function($scope) {
+    $scope.people = [
+      {
+        name: 'Patrick',
+        number: '65434'
+      },
+      {
+        name: 'Jeffrey Way',
+        number: '897675678'
+      },
+      {
+        name: 'John Doe',
+        number: '654376867867864'
+      }
+    ];
   };
 </script>
 </html>
