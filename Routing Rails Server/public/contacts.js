@@ -48,6 +48,6 @@ angular
       name: 'New Contact',
       number: ''
     });
-    $scope.contact = $scope.contact[length -1];
+    $scope.contact = $scope.contacts[length -1];
     $scope.index = length -1;
   }]);
