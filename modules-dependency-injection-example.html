@@ -24,7 +24,7 @@
 <body>
 
 <div ng-controller="ExampleCtrl">
-  {{ name }}
+  {{ name }} {{ last }}
 </div>
 
 </body>
@@ -35,6 +35,7 @@
     angular.module('myApp', [])
       .controller('ExampleCtrl', ['$scope', function(s) {
         s.name = "Tom";
+        s.last = "Anderson"
       }]);
 </script>
 </html>
