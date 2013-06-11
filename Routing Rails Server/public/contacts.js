@@ -1,7 +1,8 @@
 angular
   .module('contacts', [])
-  .config(function($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     // config your routes
+    $locationProvider.html5Mode(true);
     $routeProvider
       // Edit contact
       .when('/contact/:index', {
@@ -12,8 +13,8 @@ angular
         // List all contacts
         templateUrl: '/list.html'
       });
-  })
-  .controller('ContactsCtrl', ['$scope', function($s) {
+  }])
+  .controller('ContactsCtrl', ['$scope', function($scope) {
     // Contacts is the parent controller, so
     // $scope.contacts is avaible in all children
     $scope.contacts = [
