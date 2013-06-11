@@ -16,7 +16,7 @@ angular
   .controller('ContactsCtrl', ['$scope', function($s) {
     // Contacts is the parent controller, so
     // $scope.contacts is avaible in all children
-    $s.contacts = [
+    $scope.contacts = [
       {
         name: 'Tom',
         number: '23489234'
@@ -31,7 +31,7 @@ angular
       }
     ];
   }])
-  .controller('EditCtrl', ['$scope', '$routeParams', function($s, $rP) {
-    $s.contact = $s.contacts[$rP.index];
-    $s.index = $rP.index;
+  .controller('EditCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+    $scope.contact = $scope.contacts[$routeParams.index];
+    $scope.index = $routeParams.index;
   }]);
