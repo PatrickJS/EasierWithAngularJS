@@ -14,6 +14,10 @@ angular
         templateUrl: 'edit.html',
         controller: 'AddCtrl'
       })
+      .when('/delete/:index', {
+        templateUrl: 'edit.html',
+        controller: 'DeleteCtrl'
+      })
       .when('/', {
         // List all contacts
         templateUrl: '/list.html'
@@ -50,4 +54,12 @@ angular
     });
     $scope.contact = $scope.contacts[length -1];
     $scope.index = length -1;
+  }])
+  .controller('DeleteCtrl', ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams) {
+    $scope.contacts.splice($routeParams.index, 1);
+    $location.path('/').replace();
+    // replace in user history so when they press the
+    // back button they wont delete another contact
   }]);
+
+
