@@ -5,8 +5,8 @@ angular
     $locationProvider.html5Mode(true);
     $routeProvider
       // Edit contact
-      .when('/contact/:index', {
-        templateUrl: 'edit.html',
+      .when('/contact/:index', { // opens inside /contact/edit.html
+        templateUrl: '../edit.html', // added ../
         controller: 'EditCtrl'
       })
       .when('/', {
