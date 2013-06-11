@@ -23,7 +23,7 @@
 </head>
 <body>
 
-<div ng-controller="ExampleCtrl">
+<div ng-controller="a">
   {{ name }}
 </div>
 
@@ -32,19 +32,10 @@
     /*
     Dependency Injection is a way by which Angular gets hold of dependencies or modules of our controller and presents them for controller for use
     */
-    var ExampleCtrl = function($scope) {
-      $scope.name = "Tom";
-      console.log($scope);
-    };
-
-    /*
-    Angular stringify our code to identify what the name of the arguments are
-    */
-    console.log( ExampleCtrl.toString() );
-
-    /* example of minified version */
     var a = function(b) {
-      b.name = "Tom"
+      b.name = "Tom";
     };
+
+    a.$inject = ['$scope'];
 </script>
 </html>
