@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang=en ng-app>
+<html lang=en ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,8 +23,15 @@
 </head>
 <body>
 
+<div ng-controller="ExampleCtrl">
+  {{ name }}
+</div>
 
 </body>
 <script type="text/javascript">
+  angular.module('myApp', [])
+    .controller('ExampleCtrl', function($scope) {
+      $scope.name = "Example";
+    });
 </script>
 </html>
