@@ -9,6 +9,11 @@ angular
         templateUrl: 'edit.html', // added ../
         controller: 'EditCtrl'
       })
+      .when('/add', {
+        // Add contact
+        templateUrl: 'edit.html',
+        controller: 'AddCtrl'
+      })
       .when('/', {
         // List all contacts
         templateUrl: '/list.html'
@@ -36,4 +41,13 @@ angular
     // Load in a contact form the route (/contact/:index)
     $scope.contact = $scope.contacts[$routeParams.index];
     $scope.index = $routeParams.index;
+  }])
+  .controller('AddCtrl', ['$scope', function($scope) {
+    // inside parent ContactsCtrl scope
+    var length = $scope.contacts.push({ // returns length
+      name: 'New Contact',
+      number: ''
+    });
+    $scope.contact = $scope.contact[length -1];
+    $scope.index = length -1;
   }]);
