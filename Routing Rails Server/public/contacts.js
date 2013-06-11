@@ -2,11 +2,11 @@ angular
   .module('contacts', [])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     // config your routes
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
     $routeProvider
       // Edit contact
       .when('/contact/:index', { // opens inside /contact/edit.html
-        templateUrl: '../edit.html', // added ../
+        templateUrl: 'edit.html', // added ../
         controller: 'EditCtrl'
       })
       .when('/', {
@@ -33,6 +33,7 @@ angular
     ];
   }])
   .controller('EditCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+    // Load in a contact form the route (/contact/:index)
     $scope.contact = $scope.contacts[$routeParams.index];
     $scope.index = $routeParams.index;
   }]);

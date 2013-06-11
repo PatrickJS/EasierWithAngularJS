@@ -5,7 +5,7 @@
 </div>
 <ul>
   <li ng-repeat="contact in contacts | filter:search">
-    <a href="/contact/{{ $index }}">{{ contact.name }}</a>
+    <a href="#/contact/{{ $index }}">{{ contact.name }}</a>
     : {{ contact.number }}
   </li>
 </ul>
