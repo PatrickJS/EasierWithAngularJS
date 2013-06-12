@@ -24,7 +24,7 @@
 <body>
 
 <div ng-controller="ExampleCtrl">
-  <button click="click()">{{ message }}</button>
+  <button click="handler()">{{ message }}</button>
 </div>
 
 </body>
@@ -45,7 +45,7 @@ angular.module('myApp', [])
   })
   .controller('ExampleCtrl', ['$scope', function($scope) {
     $scope.message = "Hello";
-    $scope.click = function() {
+    $scope.handler = function() {
       alert($scope.message);
     };
   }]);
