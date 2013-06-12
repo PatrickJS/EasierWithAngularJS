@@ -112,3 +112,22 @@ app
     });
     res.save(contact);
   });
+
+
+  /*
+     App
+  */
+app.get('*', function(req, res) {
+    res.render('index.html', {
+      layout: null
+    });
+  });
+app.use(app.router)
+   .use(express.errorHandler({ dumpExceptions: true, showStack: true }));
+
+ /*
+   go
+ */
+ http.createServer(app).listen(app.get('port'), function() {
+  console.log('Server listening on port ' + app.get('port'));
+ });
