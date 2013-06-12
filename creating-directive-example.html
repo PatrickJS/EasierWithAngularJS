@@ -24,7 +24,9 @@
 <body>
 
 <div ng-controller="ExampleCtrl">
+  <my:clicker on-click="handler()">{{ message }}</my:clicker>
   <my-clicker on-click="handler()">{{ message }}</my-clicker>
+  <clicker click="handler()">{{ message }}</clicker>
 </div>
 
 </body>
@@ -46,6 +48,16 @@ angular.module('myApp', [])
         });
       }
     }
+  })
+  .directive('clicker', function() {
+    return {
+      restrict: 'A',
+      link: function(scope, element, attrs) {
+        element.bind('click', function() {
+          scope.$eval(attrs.click);
+        });
+      }
+    };
   })
   .controller('ExampleCtrl', ['$scope', function($scope) {
     $scope.message = "Hello";
