@@ -23,9 +23,18 @@
 </head>
 <body>
 
-
+<div ng-controller="ExampleCtrl">
+  <button ng-click="click()">{{ message }}</button>
+</div>
 
 </body>
 <script type="text/javascript">
+angular.module('myApp', [])
+  .controller('ExampleCtrl', ['$scope', function($scope) {
+    $scope.message = "Hello";
+    $scope.click = function() {
+      alert($scope.message);
+    };
+  }]);
 </script>
 </html>
