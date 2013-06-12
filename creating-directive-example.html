@@ -24,15 +24,18 @@
 <body>
 
 <div ng-controller="ExampleCtrl">
-  <button click="handler()">{{ message }}</button>
+  <clicker click="handler()">{{ message }}</button>
 </div>
 
 </body>
 <script type="text/javascript">
 angular.module('myApp', [])
-  .directive('click', function() {
+  .directive('clicker', function() {
     return {
-      restrict: 'A',
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: '<button ng-transclude></button>', /*transclusion*/
       link: function(scope, element, attrs) {
         console.log('scope',scope);
         console.log('element',element);
