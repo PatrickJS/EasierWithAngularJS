@@ -24,24 +24,25 @@
 <body>
 
 <div ng-controller="ExampleCtrl">
-  <clicker click="handler()">{{ message }}</button>
+  <my-clicker on-click="handler()">{{ message }}</my-clicker>
 </div>
 
 </body>
 <script type="text/javascript">
 angular.module('myApp', [])
-  .directive('clicker', function() {
+  .directive('myClicker', function() {
     return {
       restrict: 'E',
       replace: true,
       transclude: true,
-      template: '<button ng-transclude></button>', /*transclusion*/
+      template: '<button ng-transclude></button>', // transclusion
       link: function(scope, element, attrs) {
         console.log('scope',scope);
         console.log('element',element);
         console.log('attrs',attrs);
         element.bind('click', function() {
-          scope.$eval(attrs.click)
+          scope.$eval(attrs.onClick);
+          // grabs the directive and eval the value
         });
       }
     }
