@@ -36,8 +36,7 @@
         var filter = new RegExp('[^a-z0-9'+ separator +']', 'ig');
         return input.toLowerCase()
                     .replace(/\s+/g, separator)
-                    .replace(filter, '')
-
+                    .replace(filter, '');
       }
     })
     .controller('FilterCtrl', ['$scope', function($scope) {
