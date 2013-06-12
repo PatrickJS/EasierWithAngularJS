@@ -24,9 +24,11 @@
 <body>
 
 <div ng-controller="ExampleCtrl">
-  <my:clicker on-click="handler()">{{ message }}</my:clicker>
-  <my-clicker on-click="handler()">{{ message }}</my-clicker>
-  <clicker click="handler()">{{ message }}</clicker>
+  my:clicker <my:clicker on-click="handler()">{{ message }}</my:clicker>
+  <br>
+  my-clicker <my-clicker on-click="handler()">{{ message }}</my-clicker>
+  <br>
+  clicker <clicker click="handler()">{{ message }}</clicker>
 </div>
 
 </body>
@@ -51,7 +53,10 @@ angular.module('myApp', [])
   })
   .directive('clicker', function() {
     return {
-      restrict: 'A',
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      template: '<button ng-transclude></button>',
       link: function(scope, element, attrs) {
         element.bind('click', function() {
           scope.$eval(attrs.click);
