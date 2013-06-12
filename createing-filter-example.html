@@ -32,7 +32,10 @@
   angular.module('myApp', [])
     .filter('clean', function() {
       return function(input) {
-        return input.toLowerCase();
+        return input.toLowerCase()
+                    .replace(/\s+/g, '-')
+                    .replace(/[^a-z0-9-]/ig, '')
+
       }
     })
     .controller('FilterCtrl', ['$scope', function($scope) {
