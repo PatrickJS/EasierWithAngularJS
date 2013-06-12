@@ -26,19 +26,19 @@
 <div ng-controller="FilterCtrl">
 
   <ul>
-    <li>{{ price }}</li>
-    <li>{{ amount }}</li>
-    <li>{{ message }}</li>
-    <li>{{ message }}</li>
-    <li>{{ date }}</li>
+    <li>{{ price | currency:'}'}}</li>
+    <li>{{ amount | number:6 }}</li>
+    <li>{{ message | uppercase }}</li>
+    <li>{{ message | lowercase }}</li>
+    <li>{{ date | date:'yyyy-MM-dd' }}</li>
   </ul>
   <ul>
-    <li ng-repeat="name in names">
+    <li ng-repeat="name in names | limitTo:3">
       {{ name }}
     </li>
   </ul>
   <ul>
-    <li ng-repeat="person in people">
+    <li ng-repeat="person in people | orderBy:'lastname':reverse">
       {{ person.firstname}} {{ person.lastname }}
     </li>
   </ul>
@@ -52,7 +52,7 @@
     $scope.amount = 10.123456789;
     $scope.message = "Hello World";
     $scope.date = new Date();
-    $scope.names = ['Tom', 'Laura', 'Zoe', 'Jeffrey'];
+    $scope.names = ['Tom', 'Laura', 'Zoe', 'Jeffrey', 'Patrick'];
     $scope.people = [
       {
         firstname: 'Tom',
@@ -61,6 +61,10 @@
       {
         firstname: 'Jeffrey',
         lastname: 'Way'
+      },
+      {
+        firstname: 'Jow',
+        lastname: 'Bloggs'
       }
     ];
   }
