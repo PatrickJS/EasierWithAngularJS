@@ -24,17 +24,19 @@
 <body>
 
 <div ng-controller="FilterCtrl">
-  <p>{{ text | clean }}</p>
+  <p>{{ text | clean:' ' }}</p>
 </div>
 
 </body>
 <script type="text/javascript">
   angular.module('myApp', [])
     .filter('clean', function() {
-      return function(input) {
+      return function(input, separator) {
+        separator = separator || '-';
+        var filter = new RegExp('[^a-z0-9'+ separator +']', 'ig');
         return input.toLowerCase()
-                    .replace(/\s+/g, '-')
-                    .replace(/[^a-z0-9-]/ig, '')
+                    .replace(/\s+/g, separator)
+                    .replace(filter, '')
 
       }
     })
