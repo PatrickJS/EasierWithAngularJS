@@ -23,24 +23,9 @@
 </head>
 <body>
 
-<div ng-controller="FilterCtrl">
-  <p>{{ text | clean:' ' }}</p>
-</div>
+
 
 </body>
 <script type="text/javascript">
-  angular.module('myApp', [])
-    .filter('clean', function() {
-      return function(input, separator) {
-        separator = separator || '-';
-        var filter = new RegExp('[^a-z0-9'+ separator +']', 'ig');
-        return input.toLowerCase()
-                    .replace(/\s+/g, separator)
-                    .replace(filter, '');
-      }
-    })
-    .controller('FilterCtrl', ['$scope', function($scope) {
-      $scope.text = 'Hello world, this is some text';
-    }]);
 </script>
 </html>
