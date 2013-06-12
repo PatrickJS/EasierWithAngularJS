@@ -24,13 +24,19 @@
 <body>
 
 <div ng-controller="FilterCtrl">
+  <p>{{ text | clean }}</p>
 </div>
 
 </body>
 <script type="text/javascript">
   angular.module('myApp', [])
-    .controller('FilterCrtal', ['$scope', function($scope){
-
+    .filter('clean', function() {
+      return function(input) {
+        return input.toLowerCase();
+      }
+    })
+    .controller('FilterCtrl', ['$scope', function($scope) {
+      $scope.text = 'Hello world, this is some text';
     }]);
 </script>
 </html>
